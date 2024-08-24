@@ -32,17 +32,19 @@ $(document).ready(function(){
         },
         messages: {
             nome: 'Por favor, insira seu nome.',
-            telefone: 'Por favor, insira seu telefone',
-            email: 'Por favor, insira seu E-mail',
-            mensagem: 'Por favor, insira sua mensagem'
+            telefone: 'Por favor, insira seu telefone.',
+            email: 'Por favor, insira seu E-mail.',
+            mensagem: 'Por favor, insira sua mensagem.'
         },
         submitHandler: function(form) { //interceptar o evento de envio do form//
             console.log(form)
         },
         invalidHandler: function(evento, validador) { //o validador tem a função que retorna a qtde de campos incorretos//
             let camposIncorretos = validador.numberOfInvalids();
-            alert(`Existem ${camposIncorretos} campos incorretos!`) //gera alerta ao user de qtos campos incorretos//
-        }
+            if (camposIncorretos) {
+                alert(`Existem ${camposIncorretos} campos incorretos!`) //gera alerta ao user de qtos campos incorretos//
+            } 
+        }   
     })
 
     $('.lista-veiculos button').click(function(){
